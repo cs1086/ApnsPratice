@@ -15,10 +15,8 @@ class NotificationService: UNNotificationServiceExtension {
     override func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler: @escaping (UNNotificationContent) -> Void) {
         self.contentHandler = contentHandler
         bestAttemptContent = (request.content.mutableCopy() as? UNMutableNotificationContent)
-        HttpRequest.get("database..connecting...")
         
         if(Dao.shared.openConnection()){
-            HttpRequest.get("database..success...")
             print("####資料庫連線成功")
             //Dao.shared.queryData()
             Dao.shared.insertData()

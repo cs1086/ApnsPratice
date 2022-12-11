@@ -2,14 +2,15 @@ import UIKit
 import FMDB
 import sqflite
 import Flutter
-
+import UserNotifications
 @UIApplicationMain
 @objc class AppDelegate: FlutterAppDelegate {
   override func application(
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
   ) -> Bool {
-      HttpRequest.get("AppDelegate...")
+    
+      
       print("filePath="+Dao.shared.filePath);
       UNUserNotificationCenter.current().delegate=self
       UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound,.badge]) { success, _ in
@@ -48,6 +49,13 @@ import Flutter
             print("Handle push from foreground")
             // custom code to handle push while app is in the foreground
             print("\(notification.request.content.userInfo)")
+        if #available(iOS 14.0, *) {
+            var options: UNNotificationPresentationOptions = [.sound, .list, .badge, .banner]
+            completionHandler(options)
+        } else {
+            // Fallback on earlier versions
+        }
+        
 //        ReconnectSip.register()
             //HttpRequest.get("recieve.foreground")
     }
