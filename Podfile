@@ -35,9 +35,7 @@ target 'Runner' do
 end
 target 'NotificationService' do
   use_frameworks!
-  use_modular_headers!
-
-  flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+  pod 'FMDB'
 end
 post_install do |installer|
   installer.pods_project.targets.each do |target|

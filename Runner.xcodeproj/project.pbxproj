@@ -16,16 +16,11 @@
 		95D5EE432941D1EC007CACEA /* Dao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D5EE422941D1EC007CACEA /* Dao.swift */; };
 		95D5EE4C2941D50C007CACEA /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D5EE4B2941D50C007CACEA /* NotificationService.swift */; };
 		95D5EE512941D50C007CACEA /* NotificationService.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 95D5EE492941D50C007CACEA /* NotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		95D5EE572941D5DD007CACEA /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */; };
-		95D5EE652941E0EB007CACEA /* FMDB.h in Sources */ = {isa = PBXBuildFile; fileRef = 95D5EE642941E0EB007CACEA /* FMDB.h */; };
-		95D5EE662941E11B007CACEA /* FMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D5EE592941D601007CACEA /* FMDB.framework */; };
-		95D5EE672941E11F007CACEA /* FMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D5EE5C2941D7B7007CACEA /* FMDB.framework */; };
 		95D5EE682941E241007CACEA /* Dao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D5EE602941DB7E007CACEA /* Dao.swift */; };
 		96DAE1AA285FE01E2F709E50 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
-		C9145DE22F664AF9842099FC /* Pods_NotificationService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4656824349760140F927B2E /* Pods_NotificationService.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,9 +108,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95D5EE672941E11F007CACEA /* FMDB.framework in Frameworks */,
-				95D5EE662941E11B007CACEA /* FMDB.framework in Frameworks */,
-				C9145DE22F664AF9842099FC /* Pods_NotificationService.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +223,7 @@
 				95D5EE462941D50C007CACEA /* Frameworks */,
 				95D5EE472941D50C007CACEA /* Resources */,
 				95D5EE692941E3BC007CACEA /* CopyFiles */,
+				95D037CE2945E95C008DF980 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -383,6 +376,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		95D037CE2945E95C008DF980 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/bin/sh \"/Users/deoxys/dev/sdk/flutter/packages/flutter_tools/bin/xcode_backend.sh\" build\n";
+		};
 		9740EEB61CF901F6004384FC /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -421,9 +431,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95D5EE652941E0EB007CACEA /* FMDB.h in Sources */,
 				95D037CB294247F7008DF980 /* HttpRequest.swift in Sources */,
-				95D5EE572941D5DD007CACEA /* GeneratedPluginRegistrant.m in Sources */,
 				95D5EE682941E241007CACEA /* Dao.swift in Sources */,
 				95D5EE4C2941D50C007CACEA /* NotificationService.swift in Sources */,
 			);
@@ -562,14 +570,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"build/Debug-iphoneos/FMDB\"",
-					"\"build/Debug-iphoneos/sqflite\"",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"build/Debug-iphoneos/FMDB/FMDB.framework/Headers\"",
-					"\"build/Debug-iphoneos/sqflite/sqflite.framework/Headers\"",
 				);
 				INFOPLIST_FILE = NotificationService/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NotificationService;
@@ -588,8 +594,6 @@
 					"-l\"sqlite3\"",
 					"-framework",
 					"\"FMDB\"",
-					"-framework",
-					"\"sqflite\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mouse.apnsPratice.NotificationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -620,14 +624,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"build/Release-iphoneos/FMDB\"",
-					"\"build/Release-iphoneos/sqflite\"",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"build/Release-iphoneos/FMDB/FMDB.framework/Headers\"",
-					"\"build/Release-iphoneos/sqflite/sqflite.framework/Headers\"",
 				);
 				INFOPLIST_FILE = NotificationService/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NotificationService;
@@ -645,8 +647,6 @@
 					"-l\"sqlite3\"",
 					"-framework",
 					"\"FMDB\"",
-					"-framework",
-					"\"sqflite\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mouse.apnsPratice.NotificationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -675,14 +675,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"build/Profile-iphoneos/FMDB\"",
-					"\"build/Profile-iphoneos/sqflite\"",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"build/Profile-iphoneos/FMDB/FMDB.framework/Headers\"",
-					"\"build/Profile-iphoneos/sqflite/sqflite.framework/Headers\"",
 				);
 				INFOPLIST_FILE = NotificationService/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = NotificationService;
@@ -700,8 +698,6 @@
 					"-l\"sqlite3\"",
 					"-framework",
 					"\"FMDB\"",
-					"-framework",
-					"\"sqflite\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mouse.apnsPratice.NotificationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";

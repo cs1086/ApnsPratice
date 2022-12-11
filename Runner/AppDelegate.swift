@@ -11,11 +11,6 @@ import Flutter
   ) -> Bool {
       HttpRequest.get("AppDelegate...")
       print("filePath="+Dao.shared.filePath);
-      
-//      if let shareUrl = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.message.db") {
-//         let dbPath = shareUrl.appendingPathComponent("demo.db")
-//          print("dbPath=\(dbPath)");
-//      }
       UNUserNotificationCenter.current().delegate=self
       UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound,.badge]) { success, _ in
           guard success else{
